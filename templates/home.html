@@ -8,27 +8,36 @@
 {% block content %}
     <h1>Login</h1>
     <h2>{{ message }}</h2>
-    <form class="container-login-form" action="{{ url_for('login') }}" method="POST">
-        <div id="container-login-form">
+    <div>
+        <form class="container-form-login" action="{{ url_for('login') }}" method="POST">
+            <div id="container-form-login">
 
-            <div>
-                <label for="email">Username:</label>
-                <input class="form-group" type="text" name="email" autocomplete="off" autofocus>  
+                <div>
+                    <label for="email">Username:</label>
+                    <input class="form-group" type="text" name="email" autocomplete="off" autofocus>  
+                </div>
+
+                <div>
+                    <label for="password">Password:</label>
+                    <input class="form-group" type="password" name="password">  
+                </div>
+
+                <div>
+                    <input type="submit" value="Login">
+                </div>
+
             </div>
-
-            <div>
-                <label for="password">Password:</label>
-                <input class="form-group" type="password" name="password">  
-            </div>
-
-            <div>
-                <input type="submit" value="Login">
-            </div>
-
-        </div>
-    </form>
+        </form>
+    </div>
+    
+    <div>
+        <a href="{{ url_for('register') }}">Register/Signup</a>
+    </div>
 
     <div>
-        <img src="{{ url_for('static', filename='image/sample_data.jpg')}}">
+        <p>
+            <img src="{{ url_for('static', filename='image/sample_data.jpg')}}">
+
+        </p>
     </div>
 {% endblock %}
